@@ -10,6 +10,8 @@ using namespace std;
 int main()
 {
     Sculptor *tardis;
+    
+    //limites delimitados para poder esculpir o desenho
     int x=120, y=120, z=120;
 
     tardis = new Sculptor(x,y,z);
@@ -85,7 +87,8 @@ int main()
     //placa policia
     tardis->setColor(1.0, 1.0, 1.0, 1.0);
     tardis->putBox(9, 16, 27, 37, 38, 38);
-
+    
+    //salvando arquivo em formato off
     tardis->writeOFF("tardis.off");
 
     return 0;
