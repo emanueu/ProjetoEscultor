@@ -72,6 +72,10 @@ void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
             }
         }
     }
+
+    //if((x0-x1) <= 0 || (y0-x1) <= 0 || (z0-z1) <= 0){
+        cutBox(x0+1, x1-1, y0+1, y1-1, z0+1, z1-1);
+    //}
 }
 
 void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){

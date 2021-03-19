@@ -28,13 +28,14 @@ int main()
     //suporte da luz
     tardis->putBox(18, 22, 64, 70, 18, 22);
     tardis->setColor(1.0, 1.0, 0.0, 0.03);
+    //tardis->putSphere(20, 67, 20, 5);
     tardis->putBox(19, 19, 64, 69, 18, 22);
     tardis->putBox(21, 21, 64, 69, 18, 22);
     tardis->putBox(18, 22, 64, 69, 19, 19);
     tardis->putBox(18, 22, 64, 69, 21, 21);
 
 
-    //janelas
+    //janelas cut
     tardis->cutBox(9, 16, 39, 49, 2, 3);
     tardis->cutBox(25, 32, 39, 49, 2, 3);
     tardis->cutBox(9, 16, 27, 37, 2, 3);
@@ -71,6 +72,44 @@ int main()
     tardis->cutBox(37, 38, 3, 13, 9, 16);
     tardis->cutBox(37, 38, 3, 13, 25, 32);
 
+    //janela put
+    tardis->setColor(0.063, 0.137, 0.447, 1.0);
+    tardis->putBox(9, 16, 39, 49, 3, 3);
+    tardis->putBox(25, 32, 39, 49, 3, 3);
+    tardis->putBox(9, 16, 27, 37, 3, 3);
+    tardis->putBox(25, 32, 27, 37, 3, 3);
+    tardis->putBox(9, 16, 15, 25, 3, 3);
+    tardis->putBox(25, 32, 15, 25, 3, 3);
+    tardis->putBox(9, 16, 3, 13, 3, 3);
+    tardis->putBox(25, 32, 3, 13, 3, 3);
+
+    tardis->putBox(3, 3, 39, 49, 9, 16);
+    tardis->putBox(3, 3, 39, 49, 25, 32);
+    tardis->putBox(3, 3, 27, 37, 9, 16);
+    tardis->putBox(3, 3, 27, 37, 25, 32);
+    tardis->putBox(3, 3, 15, 25, 9, 16);
+    tardis->putBox(3, 3, 15, 25, 25, 32);
+    tardis->putBox(3, 3, 3, 13, 9, 16);
+    tardis->putBox(3, 3, 3, 13, 25, 32);
+
+    tardis->putBox(9, 16, 39, 49, 37, 37);
+    tardis->putBox(25, 32, 39, 49, 37, 37);
+    tardis->putBox(9, 16, 27, 37, 37, 37);
+    tardis->putBox(25, 32, 27, 37, 37, 37);
+    tardis->putBox(9, 16, 15, 25, 37, 37);
+    tardis->putBox(25, 32, 15, 25, 37, 37);
+    tardis->putBox(9, 16, 3, 13, 37, 37);
+    tardis->putBox(25, 32, 3, 13, 37, 37);
+
+    tardis->putBox(37, 37, 39, 49, 9, 16);
+    tardis->putBox(37, 37, 39, 49, 25, 32);
+    tardis->putBox(37, 37, 27, 37, 9, 16);
+    tardis->putBox(37, 37, 27, 37, 25, 32);
+    tardis->putBox(37, 37, 15, 25, 9, 16);
+    tardis->putBox(37, 37, 15, 25, 25, 32);
+    tardis->putBox(37, 37, 3, 13, 9, 16);
+    tardis->putBox(37, 37, 3, 13, 25, 32);
+
     //vidros janela
     tardis->setColor(0.529, 0.808, 0.921, 1.0);
     tardis->putBox(9, 16, 39, 49, 3, 3);
@@ -82,9 +121,13 @@ int main()
     tardis->putBox(37, 37, 39, 49, 9, 16);
     tardis->putBox(37, 37, 39, 49, 25, 32);
 
-    //placa policia
-    tardis->setColor(1.0, 1.0, 1.0, 1.0);
+    //adesivos
+    tardis->setColor(0.8, 0.8, 0.8, 1.0);
     tardis->putBox(9, 16, 27, 37, 38, 38);
+    tardis->putEllipsoid(13, 32, 38, 2, 2, 0);
+
+    //adesivo policia
+
 
     tardis->writeOFF("tardis.off");
 
