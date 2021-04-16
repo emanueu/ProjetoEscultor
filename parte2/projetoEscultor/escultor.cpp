@@ -1,5 +1,5 @@
-#include "escultor.h"
 #include <iostream>
+#include "escultor.h"
 #include <cmath>
 #include <string>
 #include <sstream>
@@ -9,7 +9,7 @@
 using namespace std;
 
 Sculptor::Sculptor(int _nx, int _ny, int _nz){
-    int i, j, k;
+    int i, k;
     nx = _nx;
     ny = _ny;
     nz = _nz;
@@ -73,9 +73,8 @@ void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
         }
     }
 
-    //if((x0-x1) <= 0 || (y0-x1) <= 0 || (z0-z1) <= 0){
         cutBox(x0+1, x1-1, y0+1, y1-1, z0+1, z1-1);
-    //}
+
 }
 
 void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
@@ -126,9 +125,9 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
     yf = (ycenter+radius) < ny ? ycenter+radius : ny;
     zf = (zcenter+radius) < nz ? zcenter+radius : nz;
 
-    for(k=0; k<=nz; k++){
-        for(j=0; j<=ny; j++){
-            for(i=0; i<=nx; i++){
+    for(k=zi; k<=zf; k++){
+        for(j=yi; j<=yf; j++){
+            for(i=xi; i<=xf; i++){
                 dist = pow(i-xcenter, 2) + pow(j-ycenter, 2) + pow(k-zcenter, 2);
                 if(dist <= pow(radius, 2)){
                     cutVoxel(i, j, k);
@@ -257,12 +256,12 @@ void Sculptor::writeOFF(char *filename){
     fout.open(filename);
 
     if(fout.is_open()){
-        cout << "salvando aquivo OFF.\n";
+        cout << "salvando arquivo tardis.off" << endl;
     }
     else{
-        cout << "arquivo OFF nao encontrado\n";
+        cout << "Arquivo tardis.off não encontrado, verifique se ele encontra-se na pasta de compilação" << endl;
         exit(1);
-        //editar para salvar e abrir um novo arquivo
+
     }
 
     for(i=0; i < nx; i++){
@@ -318,6 +317,6 @@ void Sculptor::writeOFF(char *filename){
     }
 
     if(fout.is_open()){
-        cout << "Arquivo.OFF salvo com sucesso!"<<endl;
+        cout << "Arquivo tardis.off foi salvo com sucesso! Confira o arquivo na pasta de compilacao."<<endl;
     }
 }

@@ -12,9 +12,7 @@ putVoxel::putVoxel(int x, int y, int z, float r, float g, float b, float a)
     this->a=a;
 }
 
-void putVoxel::draw(escultor &s)
-{
-
+void putVoxel::draw(Sculptor &s){
     s.setColor(r,g,b,a);
     s.putVoxel(x,y,z);
 

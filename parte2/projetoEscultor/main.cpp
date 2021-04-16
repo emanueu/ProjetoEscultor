@@ -3,17 +3,40 @@
 #include <sstream>
 #include <string>
 #include <vector>
+
 #include "escultor.h"
+#include "interpretador.h"
+#include "figurageometrica.h"
 
 using namespace std;
 
-int main()
-{
+int main(){
+
+    cout << "Iniciando programa para construcao do Tardis" << endl;
+
     Sculptor *tardis;
-    int x=120, y=120, z=120;
+    Interpretador parser;
 
-    tardis = new Sculptor(x,y,z);
+    vector<figuraGeometrica*>figs;
 
+    figs = parser.parse("alo.txt");
+
+    tardis = new Sculptor(parser.getDimx(), parser.getDimy(), parser.getDimz());
+
+    for(size_t i=0;i<figs.size();i++){
+        figs[i]->draw(*tardis);
+    }
+
+    tardis->writeOFF((char*) "tardis.off");
+    for(size_t i=0; i<figs.size(); i++){
+        delete figs[i];
+    }
+
+    delete tardis;
+
+
+    /* codigo de construção anterior
+     *
     tardis->setColor(0.063, 0.137, 0.447, 1.0);
     tardis->putBox(0, 40, 0, 1, 0, 40); //base da tardis
     tardis->putBox(2, 38, 1, 50, 2, 38); //corpo da tardis
@@ -28,7 +51,8 @@ int main()
     //suporte da luz
     tardis->putBox(18, 22, 64, 70, 18, 22);
     tardis->setColor(1.0, 1.0, 0.0, 0.03);
-    //tardis->putSphere(20, 67, 20, 5);
+
+//tardis->putSphere(20, 67, 20, 5);
     tardis->putBox(19, 19, 64, 69, 18, 22);
     tardis->putBox(21, 21, 64, 69, 18, 22);
     tardis->putBox(18, 22, 64, 69, 19, 19);
@@ -130,6 +154,6 @@ int main()
 
 
     tardis->writeOFF("tardis.off");
-
+*/
     return 0;
 }

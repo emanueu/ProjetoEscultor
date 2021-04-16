@@ -1,0 +1,12 @@
+debug/cutbox.o
+debug/cutellipsoid.o
+debug/cutsphere.o
+debug/cutvoxel.o
+debug/escultor.o
+debug/figurageometrica.o
+debug/interpretador.o
+debug/main.o
+debug/putbox.o
+debug/putellipsoid.o
+debug/putsphere.o
+debug/putvoxel.o

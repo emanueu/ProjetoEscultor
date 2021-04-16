@@ -10,7 +10,10 @@ class cutSphere : public figuraGeometrica
     int xcenter, ycenter, zcenter, radius;
 public:
     cutSphere(int xcenter, int ycenter, int zcenter, float radius);
-    ~cutSphere(){};
+
+    ~cutSphere(){
+
+    };
     void draw(Sculptor &s);
 };
 

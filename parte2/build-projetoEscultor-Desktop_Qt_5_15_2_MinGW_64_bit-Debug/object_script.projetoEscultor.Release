@@ -1,0 +1,12 @@
+release/cutbox.o
+release/cutellipsoid.o
+release/cutsphere.o
+release/cutvoxel.o
+release/escultor.o
+release/figurageometrica.o
+release/interpretador.o
+release/main.o
+release/putbox.o
+release/putellipsoid.o
+release/putsphere.o
+release/putvoxel.o

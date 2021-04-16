@@ -10,6 +10,7 @@ SOURCES += \
         cutvoxel.cpp \
         escultor.cpp \
         figurageometrica.cpp \
+        interpretador.cpp \
         main.cpp \
         putbox.cpp \
         putellipsoid.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     cutvoxel.h \
     escultor.h \
     figurageometrica.h \
+    interpretador.h \
     putbox.h \
     putellipsoid.h \
     putsphere.h \
